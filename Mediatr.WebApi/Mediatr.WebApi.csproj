@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mediatr.Application\Mediatr.Application.csproj" />
-    <ProjectReference Include="..\Mediatr.Infrastructure\Mediatr.Persistence.csproj" />
+    <ProjectReference Include="..\Mediatr.Persistence\Mediatr.Persistence.csproj" />
     <ProjectReference Include="..\Mediatr.Presentation\Mediatr.Presentation.csproj" />
   </ItemGroup>
 

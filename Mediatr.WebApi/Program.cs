@@ -6,7 +6,7 @@ using Mediatr.WebApi;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddApplicationServices();
-builder.AddInfrastructureServices();
+builder.AddPersistenceServices();
 builder.AddPresentationServices();
 builder.AddWebApiServices();
 
