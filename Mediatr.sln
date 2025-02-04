@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediatr.Presentation", "Med
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediatr.TodoContracts", "Mediatr.Contracts\Mediatr.TodoContracts.csproj", "{D40DA6DA-5E4A-4F7E-8FB2-47BFE7E597B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediatr.Infrastructure", "Mediatr.Infrastructure\Mediatr.Infrastructure.csproj", "{E49D070D-0ECE-4CAC-B109-3DA7E89C0FFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{D40DA6DA-5E4A-4F7E-8FB2-47BFE7E597B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D40DA6DA-5E4A-4F7E-8FB2-47BFE7E597B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D40DA6DA-5E4A-4F7E-8FB2-47BFE7E597B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E49D070D-0ECE-4CAC-B109-3DA7E89C0FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E49D070D-0ECE-4CAC-B109-3DA7E89C0FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E49D070D-0ECE-4CAC-B109-3DA7E89C0FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E49D070D-0ECE-4CAC-B109-3DA7E89C0FFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,5 +64,6 @@ Global
 		{89165A7D-2270-4325-8A01-B8FFAE646C85} = {9FFA3560-4778-4748-A945-E0757657823E}
 		{56E05503-9144-4A6F-B267-942FA0551FA8} = {9FFA3560-4778-4748-A945-E0757657823E}
 		{D40DA6DA-5E4A-4F7E-8FB2-47BFE7E597B4} = {9FFA3560-4778-4748-A945-E0757657823E}
+		{E49D070D-0ECE-4CAC-B109-3DA7E89C0FFD} = {9FFA3560-4778-4748-A945-E0757657823E}
 	EndGlobalSection
 EndGlobal

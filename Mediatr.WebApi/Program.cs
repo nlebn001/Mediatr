@@ -7,9 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddApplicationServices();
 builder.AddPersistenceServices();
+builder.AddInfrastructureServices();
 builder.AddPresentationServices();
 builder.AddWebApiServices();
-
+builder.Services.AddControllers()
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

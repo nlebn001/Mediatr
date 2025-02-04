@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Mediatr.Application\Mediatr.Application.csproj" />
+    <ProjectReference Include="..\Mediatr.Infrastructure\Mediatr.Infrastructure.csproj" />
     <ProjectReference Include="..\Mediatr.Persistence\Mediatr.Persistence.csproj" />
     <ProjectReference Include="..\Mediatr.Presentation\Mediatr.Presentation.csproj" />
   </ItemGroup>

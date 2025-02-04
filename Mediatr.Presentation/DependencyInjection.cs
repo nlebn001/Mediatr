@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Mvc;
 namespace Mediatr.Presentation;
 
 public static class DependencyInjection
