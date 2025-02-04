@@ -1,0 +1,6 @@
+@Mediatr.WebApi_HostAddress = http://localhost:5022
+
+GET {{Mediatr.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
