@@ -20,10 +20,15 @@ public static class DependencyInjection
 
         builder.Services.AddDbContext<AppDbContext>((sp, options) =>
         {
-            options.UseSqlServer(connectionString);
+            options.UseSqlServer(connectionString, sqlServOpt =>
+            {
+                sqlServOpt.MigrationsAssembly(typeof(AppDbContext).Assembly);
+            });
         });
 
         builder.Services.AddScoped<ITodoRepository, TodoRepository>();
         builder.Services.AddScoped<IUnitOfWork>(factory => factory.GetRequiredService<AppDbContext>());
+
+        builder.Services.AddHostedService<DbMigrationAgent>();
     }
 }

@@ -4,20 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Mediatr.Presentation;
 
-//[ApiController]
-//[Route("api/[controller]")]
-//public abstract class ApiControllerBase : ControllerBase
-//{
-//    protected ISender Sender { get; init; }
-
-//    public ApiControllerBase()
-//    {
-//        Sender ??= HttpContext.RequestServices.GetService<ISender>() ??
-//            throw new NullReferenceException($"{nameof(ISender)} service not found");
-//    }
-
-//}
-
 [ApiController]
 [Route("api/[controller]")]
 public abstract class ApiControllerBase : ControllerBase

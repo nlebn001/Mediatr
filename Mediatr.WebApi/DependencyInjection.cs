@@ -1,4 +1,6 @@
-﻿namespace Mediatr.WebApi;
+﻿using Mediatr.Presentation;
+
+namespace Mediatr.WebApi;
 
 public static class DependencyInjection
 {
@@ -8,6 +10,10 @@ public static class DependencyInjection
     /// <param name="builder"></param>
     public static void AddWebApiServices(this IHostApplicationBuilder builder)
     {
+        builder.Services.AddOpenApi();
 
+        //adds controllers from presentation layer
+        builder.Services.AddControllers()
+            .AddApplicationPart(typeof(TodoController).Assembly);
     }
 }
