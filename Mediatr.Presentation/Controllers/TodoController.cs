@@ -15,7 +15,7 @@ public sealed class TodoController : ApiControllerBase
 
     [HttpGet("alltodos")]
     [ProducesResponseType(typeof(TodoDto), StatusCodes.Status200OK)]
-    public async Task<IActionResult> AllTodosAsync(int todoId, CancellationToken token)
+    public async Task<IActionResult> AllTodosAsync(CancellationToken token)
     {
         var query = new AllTodosQuery();
         var todo = await Sender.Send(query, token);
@@ -33,13 +33,13 @@ public sealed class TodoController : ApiControllerBase
     }
 
     [HttpPost("createtodo")]
-    [ProducesResponseType(typeof(int), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> CreateTodoAsync([FromBody] CreateTodoDto todo, CancellationToken token)
     {
         var command = new CreateTodoCommand(todo.Title, todo.Text);
         var todoId = await Sender.Send(command, token);
-        return CreatedAtAction(nameof(CreateTodoAsync), todoId);
+        return Ok(todoId);
     }
 
     [HttpPut("edittodo/{todoId:int}")]
