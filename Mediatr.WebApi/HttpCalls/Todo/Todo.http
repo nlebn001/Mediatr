@@ -1,0 +1,34 @@
+@Web_HostAddress = https://localhost:5001
+
+# All todos
+GET {{Web_HostAddress}}/api/todo/alltodos
+
+###
+
+#Get todo by id
+GET {{Web_HostAddress}}/api/todo/todo/1
+
+###
+
+#Create new todo
+POST {{Web_HostAddress}}/api/todo/createtodo
+Content-Type: application/json
+{
+  "Title":"Initially created title",
+  "Text":"Initially created text"
+}
+
+###
+
+#Edit todo
+PUT {{Web_HostAddress}}/api/todo/edittodo/1
+Content-Type: application/json
+{
+  "Title":"Edited title",
+  "Text":"Edited text"
+}
+
+###
+
+#Dlete todo by id
+DELETE {{Web_HostAddress}}/api/todo/deletetodo/4
