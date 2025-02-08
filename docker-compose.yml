@@ -1,0 +1,51 @@
+services:
+  mediatr.webapi:
+    image: ${DOCKER_REGISTRY-}mediatrwebapi
+    build:
+      context: .
+      dockerfile: Mediatr.WebApi/Dockerfile
+    depends_on:
+      - postgres
+    environment:
+    #must be the same as in appsettings
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=todoDb;Username=admin;Password=admin
+    networks:
+      - app_network
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres_container
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: todoDb
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - C:/Temp/docker/volumes/postgres:/var/lib/postgresql/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - app_network
+    # healthcheck:
+    #   test: ["CMD-SHELL", "pg_isready -U myuser"]
+    #   interval: 10s
+    #   timeout: 5s
+    #   retries: 5
+    # logging:
+    #   driver: "json-file"
+    #   options:
+    #     max-size: "10m"
+    #     max-file: "3"
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: "1.0"
+    #       memory: "512M"
+    #     reservations:
+    #       cpus: "0.5"
+    #       memory: "256M"
+
+networks:
+  app_network:
+    driver: bridge

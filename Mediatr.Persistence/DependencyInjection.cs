@@ -15,14 +15,14 @@ public static class DependencyInjection
     /// <exception cref="ArgumentNullException"></exception>
     public static void AddPersistenceServices(this IHostApplicationBuilder builder)
     {
-        var connectionString = builder.Configuration.GetConnectionString("TodoDb") ??
+        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
             throw new ArgumentNullException($"Connection string is not found");
 
         builder.Services.AddDbContext<AppDbContext>((sp, options) =>
         {
-            options.UseSqlServer(connectionString, sqlServOpt =>
+            options.UseNpgsql(connectionString, opt =>
             {
-                sqlServOpt.MigrationsAssembly(typeof(AppDbContext).Assembly);
+                opt.MigrationsAssembly(typeof(AppDbContext).Assembly);
             });
         });
 
