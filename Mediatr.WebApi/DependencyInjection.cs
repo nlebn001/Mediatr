@@ -19,11 +19,9 @@ public static class DependencyInjection
         });
 
         builder.Services.AddOpenApi();
-
+        
         //adds controllers from presentation layer
         builder.Services.AddControllers()
             .AddApplicationPart(typeof(TodoController).Assembly);
-
-
     }
 }
