@@ -18,8 +18,15 @@ public static class DependencyInjection
                                 .AllowAnyHeader());
         });
 
-        builder.Services.AddOpenApi();
-        
+        builder.Services.AddOpenApi(option =>
+        {
+            option.AddDocumentTransformer((document, context, cancellationToken) =>
+            {
+                document.Servers = [];
+                return Task.CompletedTask;
+            });
+        });
+
         //adds controllers from presentation layer
         builder.Services.AddControllers()
             .AddApplicationPart(typeof(TodoController).Assembly);

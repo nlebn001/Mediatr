@@ -5,10 +5,7 @@ services:
     build:
       context: .
       dockerfile: Mediatr.WebApi/Dockerfile
-    ports:
-      - "5000:5000"
-      - "5001:5001"
-    restart: always
+    # restart: always
     depends_on:
       - mediatr.postgres
     networks:
@@ -18,7 +15,7 @@ services:
     image: postgres:latest
     container_name: mediatr.postgres
     # restart: unless-stopped
-    restart: always
+    # restart: always
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
